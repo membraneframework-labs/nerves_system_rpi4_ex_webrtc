@@ -1,8 +1,8 @@
-defmodule NervesSystemRpi4.MixProject do
+defmodule NervesSystemRpi4ExWebRTC.MixProject do
   use Mix.Project
 
-  @github_organization "nerves-project"
-  @app :nerves_system_rpi4
+  @github_organization "membraneframework-labs"
+  @app :nerves_system_rpi4_ex_webrtc
   @source_url "https://github.com/#{@github_organization}/#{@app}"
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
@@ -66,7 +66,8 @@ defmodule NervesSystemRpi4.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.15 or ~> 1.8", runtime: false},
+      # {:nerves, "~> 1.5.4 or ~> 1.6.0 or ~> 1.7.15 or ~> 1.8", runtime: false},
+      {:nerves, path: "../nerves", override: true, runtime: false},
       {:nerves_system_br, "1.27.2", runtime: false},
       {:nerves_toolchain_aarch64_nerves_linux_gnu, "~> 13.2.0", runtime: false},
       {:nerves_system_linter, "~> 0.4", only: [:dev, :test], runtime: false},
